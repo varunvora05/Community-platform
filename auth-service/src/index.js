@@ -8,7 +8,7 @@ import { resolvers } from './schema/resolvers.js';
 import { getUser } from './utils/auth.js';
 
 dotenv.config();
-
+// COMP 387g
 const app = express();
 
 // Manual CORS middleware — the 'cors' package is intentionally not used.
