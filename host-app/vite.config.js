@@ -2,34 +2,23 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import federation from '@originjs/vite-plugin-federation';
 
+// In dev mode remoteEntry.js is served at /remoteEntry.js.
+// After build+preview it is served at /assets/remoteEntry.js.
+// Pass VITE_PREVIEW=true to use the preview paths (see README).
+const usePreviewPaths = process.env.VITE_PREVIEW === 'true';
+
 export default defineConfig({
   plugins: [
     react(),
     federation({
-<<<<<<< HEAD
-      name: 'authFrontend',
-      filename: 'remoteEntry.js',
-      exposes: {
-        './AuthApp': './src/AuthApp.jsx',
-      },
-      shared: {
-        react: { singleton: true, requiredVersion: false },
-        'react-dom': { singleton: true, requiredVersion: false },
-      },
-    }),
-  ],
-  build: {
-    target: 'esnext',
-    minify: false,
-  },
-  server: { port: 5001 },
-  preview: { port: 5001 },
-});
-=======
-      name: 'auth_frontend',
-      filename: 'remoteEntry.js',
-      exposes: {
-        './AuthApp': './src/App.jsx'
+      name: 'host',
+      remotes: {
+        auth_frontend: usePreviewPaths
+          ? 'http://localhost:3001/assets/remoteEntry.js'
+          : 'http://localhost:3001/remoteEntry.js',
+        community_frontend: usePreviewPaths
+          ? 'http://localhost:3002/assets/remoteEntry.js'
+          : 'http://localhost:3002/remoteEntry.js'
       },
       shared: {
         react: { singleton: true, eager: true, requiredVersion: '^18.2.0' },
@@ -40,10 +29,10 @@ export default defineConfig({
     })
   ],
   server: {
-    port: 3001
+    port: 3000
   },
   preview: {
-    port: 3001
+    port: 3000
   },
   build: {
     modulePreload: false,
@@ -52,4 +41,3 @@ export default defineConfig({
     cssCodeSplit: false
   }
 });
->>>>>>> ff81d9ceeb2b33a29fbbae8dcd627f3ca2523e3b

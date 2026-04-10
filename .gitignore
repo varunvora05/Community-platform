@@ -1,5 +1,31 @@
+<<<<<<< HEAD
 node_modules/
 .env
 dist/
 build/
 coverage/
+=======
+# Dependencies
+**/node_modules/
+
+# Build outputs
+**/dist/
+**/.vite/
+
+# Environment variables and secrets
+**/.env
+**/.env.*
+!**/.env.example
+
+# Logs
+**/npm-debug.log*
+**/yarn-debug.log*
+**/yarn-error.log*
+**/pnpm-debug.log*
+
+# OS/editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+>>>>>>> ff81d9ceeb2b33a29fbbae8dcd627f3ca2523e3b

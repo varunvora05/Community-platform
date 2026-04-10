@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 :root {
   --text: #6b6375;
   --text-h: #08060d;
@@ -108,4 +109,288 @@ code {
   line-height: 135%;
   padding: 4px 8px;
   background: var(--code-bg);
+=======
+/* ─── Reset & base ────────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --clr-primary:       #6c63ff;
+  --clr-primary-dark:  #5a52d5;
+  --clr-primary-light: #ede9ff;
+  --clr-bg:            #f4f6fb;
+  --clr-card:          #ffffff;
+  --clr-text:          #1a1a2e;
+  --clr-muted:         #6b7280;
+  --clr-border:        #e5e7eb;
+  --clr-error:         #ef4444;
+  --clr-error-bg:      #fef2f2;
+  --clr-success:       #10b981;
+  --radius:            14px;
+  --shadow:            0 8px 32px rgba(108, 99, 255, 0.12);
+  --transition:        0.2s ease;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+body {
+  background: var(--clr-bg);
+  color: var(--clr-text);
+  min-height: 100dvh;
+}
+
+/* ─── Layout ──────────────────────────────────────────────────────────────── */
+.auth-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100dvh;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.auth-icon { display: none; }
+.auth-card {
+  background: var(--clr-card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 2.5rem 2.25rem;
+  width: 100%;
+  max-width: 460px;
+  animation: slideUp 0.35s ease both;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.auth-icon {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.auth-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-align: center;
+  color: var(--clr-text);
+  margin-bottom: 0.25rem;
+}
+
+.auth-subtitle {
+  font-size: 0.9rem;
+  color: var(--clr-muted);
+  text-align: center;
+  margin-bottom: 1.75rem;
+}
+
+/* ─── Form ────────────────────────────────────────────────────────────────── */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.form-group label {
+  font-size: 0.825rem;
+  font-weight: 600;
+  color: var(--clr-text);
+  letter-spacing: 0.01em;
+}
+
+.form-group input,
+.form-group select {
+  padding: 0.65rem 0.9rem;
+  border: 1.5px solid var(--clr-border);
+  border-radius: 8px;
+  font-size: 0.95rem;
+  color: var(--clr-text);
+  background: #fafafa;
+  outline: none;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: var(--clr-primary);
+  box-shadow: 0 0 0 3px rgba(108, 99, 255, 0.12);
+  background: #fff;
+}
+
+.form-group input.input-error,
+.form-group select.input-error {
+  border-color: var(--clr-error);
+}
+
+.field-error {
+  font-size: 0.78rem;
+  color: var(--clr-error);
+  margin-top: 0.1rem;
+}
+
+/* ─── Buttons ─────────────────────────────────────────────────────────────── */
+.btn-primary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  background: var(--clr-primary);
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background var(--transition), transform var(--transition);
+  margin-top: 0.25rem;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: var(--clr-primary-dark);
+  transform: translateY(-1px);
+}
+
+.btn-primary:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* ─── Error banner ────────────────────────────────────────────────────────── */
+.error-banner {
+  background: var(--clr-error-bg);
+  border: 1px solid #fca5a5;
+  color: #b91c1c;
+  border-radius: 8px;
+  padding: 0.65rem 0.9rem;
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+}
+
+/* ─── Switch link ─────────────────────────────────────────────────────────── */
+.auth-switch {
+  margin-top: 1.5rem;
+  text-align: center;
+  font-size: 0.875rem;
+  color: var(--clr-muted);
+}
+
+.link-btn {
+  background: none;
+  border: none;
+  color: var(--clr-primary);
+  font-weight: 600;
+  cursor: pointer;
+  font-size: inherit;
+  padding: 0;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.link-btn:hover { color: var(--clr-primary-dark); }
+
+/* ─── Loading spinner ─────────────────────────────────────────────────────── */
+.spinner {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border: 2.5px solid rgba(255,255,255,0.4);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ─── User panel (Logout) ─────────────────────────────────────────────────── */
+.user-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  background: var(--clr-card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 2rem 2.25rem;
+  width: 100%;
+  max-width: 400px;
+  animation: slideUp 0.3s ease both;
+}
+
+.avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--clr-primary), #764ba2);
+  color: #fff;
+  font-size: 1.75rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(108, 99, 255, 0.3);
+}
+
+.user-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.user-name {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--clr-text);
+}
+
+.user-role {
+  font-size: 0.875rem;
+  color: var(--clr-primary);
+  font-weight: 600;
+  background: var(--clr-primary-light);
+  padding: 0.2rem 0.75rem;
+  border-radius: 99px;
+}
+
+.user-email {
+  font-size: 0.8rem;
+  color: var(--clr-muted);
+}
+
+.btn-logout {
+  padding: 0.6rem 1.75rem;
+  border: 2px solid var(--clr-error);
+  background: transparent;
+  color: var(--clr-error);
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition);
+  margin-top: 0.25rem;
+}
+
+.btn-logout:hover:not(:disabled) {
+  background: var(--clr-error);
+  color: #fff;
+}
+
+/* ─── Responsive ──────────────────────────────────────────────────────────── */
+@media (max-width: 480px) {
+  .auth-card { padding: 2rem 1.25rem; }
+  .form-row  { grid-template-columns: 1fr; }
+>>>>>>> ff81d9ceeb2b33a29fbbae8dcd627f3ca2523e3b
 }
