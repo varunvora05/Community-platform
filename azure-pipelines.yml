@@ -1,0 +1,60 @@
+trigger:
+- main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+stages:
+
+- stage: Build
+  jobs:
+  - job: BuildJob
+    steps:
+
+    - task: NodeTool@0
+      inputs:
+        versionSpec: '18.x'
+
+    - script: |
+        echo "Installing dependencies..."
+        cd auth-service
+        npm install
+        cd ../community-service
+        npm install
+      displayName: 'Compile Project'
+
+    - script: echo "Running tests..."
+      displayName: 'Test Stage'
+
+    - script: echo "Running SonarQube..."
+      displayName: 'SonarQube'
+
+- stage: Deliver
+  jobs:
+  - job: DeliverJob
+    steps:
+    - script: echo "Packaging app"
+
+- stage: Dev
+  jobs:
+  - job: DevDeploy
+    steps:
+    - script: echo "Deploy to Dev"
+
+- stage: QAT
+  jobs:
+  - job: QATDeploy
+    steps:
+    - script: echo "Deploy to QAT"
+
+- stage: Staging
+  jobs:
+  - job: StagingDeploy
+    steps:
+    - script: echo "Deploy to Staging"
+
+- stage: Production
+  jobs:
+  - job: ProdDeploy
+    steps:
+    - script: echo "Deploy to Production"
