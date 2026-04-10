@@ -1,0 +1,158 @@
+.dashboard { padding: 2rem; max-width: 1100px; margin: 0 auto; }
+
+.tabs {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.tabs button {
+  padding: 0.6rem 1.5rem;
+  border: 2px solid #2c3e50;
+  background: white;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s;
+}
+
+.tabs button.active,
+.tabs button:hover {
+  background: #2c3e50;
+  color: white;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.section-header h2 { font-size: 1.5rem; color: #2c3e50; }
+
+.add-btn {
+  background: #27ae60;
+  color: white;
+  border: none;
+  padding: 0.5rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+.post-form {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.post-form input,
+.post-form textarea,
+.post-form select {
+  padding: 0.75rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.post-form textarea { min-height: 100px; resize: vertical; }
+
+.post-form button {
+  padding: 0.75rem;
+  background: #3498db;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  border-left: 5px solid #3498db;
+  position: relative;
+}
+
+.card.news      { border-left-color: #3498db; }
+.card.discussion { border-left-color: #9b59b6; }
+.card.help      { border-left-color: #e67e22; }
+.card.resolved  { border-left-color: #27ae60; opacity: 0.8; }
+
+.card h3 { margin-bottom: 0.5rem; font-size: 1.1rem; }
+.card p  { color: #555; font-size: 0.95rem; line-height: 1.5; }
+.card small { color: #999; font-size: 0.8rem; display: block; margin-top: 0.5rem; }
+
+.badge {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  background: #eee;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.ai-summary {
+  background: #f0f7ff;
+  border-left: 3px solid #3498db;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #444;
+  border-radius: 4px;
+}
+
+.location { color: #777; font-size: 0.85rem; }
+
+.resolve-btn {
+  margin-top: 0.75rem;
+  padding: 0.4rem 0.8rem;
+  background: #27ae60;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.volunteer-btn {
+  margin-top: 0.75rem;
+  margin-left: 0.5rem;
+  padding: 0.4rem 0.8rem;
+  background: #e67e22;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.post-meta, .request-meta {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.loading-text { text-align: center; padding: 2rem; color: #888; }

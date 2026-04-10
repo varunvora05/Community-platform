@@ -6,6 +6,26 @@ export default defineConfig({
   plugins: [
     react(),
     federation({
+<<<<<<< HEAD
+      name: 'authFrontend',
+      filename: 'remoteEntry.js',
+      exposes: {
+        './AuthApp': './src/AuthApp.jsx',
+      },
+      shared: {
+        react: { singleton: true, requiredVersion: false },
+        'react-dom': { singleton: true, requiredVersion: false },
+      },
+    }),
+  ],
+  build: {
+    target: 'esnext',
+    minify: false,
+  },
+  server: { port: 5001 },
+  preview: { port: 5001 },
+});
+=======
       name: 'auth_frontend',
       filename: 'remoteEntry.js',
       exposes: {
@@ -32,3 +52,4 @@ export default defineConfig({
     cssCodeSplit: false
   }
 });
+>>>>>>> ff81d9ceeb2b33a29fbbae8dcd627f3ca2523e3b

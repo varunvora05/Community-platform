@@ -1,3 +1,10 @@
+<<<<<<< HEAD
+node_modules/
+.env
+dist/
+build/
+coverage/
+=======
 # Dependencies
 **/node_modules/
 
@@ -21,3 +28,4 @@
 Thumbs.db
 .vscode/
 .idea/
+>>>>>>> ff81d9ceeb2b33a29fbbae8dcd627f3ca2523e3b
