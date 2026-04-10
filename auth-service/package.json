@@ -3,24 +3,6 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-<<<<<<< HEAD
-    "start": "node index.js",
-    "dev": "nodemon index.js"
-  },
-  "dependencies": {
-    "apollo-server-express": "^3.13.0",
-    "bcryptjs": "^2.4.3",
-    "dotenv": "^16.0.3",
-    "express": "^4.18.2",
-    "graphql": "^16.6.0",
-    "jsonwebtoken": "^9.0.0",
-    "mongoose": "^7.0.0"
-  },
-  "devDependencies": {
-    "nodemon": "^3.0.0"
-  }
-}
-=======
     "start": "node src/index.js",
     "dev": "nodemon src/index.js"
   },
@@ -37,4 +19,3 @@
     "nodemon": "^3.0.3"
   }
 }
->>>>>>> ff81d9ceeb2b33a29fbbae8dcd627f3ca2523e3b
